@@ -17,10 +17,13 @@ public class SampleController {
     private String team;
 
     private Coach myCoach;
+    private Coach myAnotherCoach;
 
     @Autowired
-    public  SampleController(Coach theCoach){
+    public  SampleController(@Qualifier("cricketCoach") Coach theCoach,
+                             @Qualifier("cricketCoach") Coach anotherCoach){
         myCoach=theCoach;
+        myAnotherCoach=anotherCoach;
     }
 
     @GetMapping
@@ -38,5 +41,10 @@ public class SampleController {
     @GetMapping("/getdailyworkout")
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/check")
+    public String checkBeans(){
+        return "Comparing beans myCoach==anotherCoach "+ (myCoach==myAnotherCoach);
     }
 }
