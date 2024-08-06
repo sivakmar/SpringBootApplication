@@ -8,4 +8,8 @@ public class TennisCoach implements Coach{
     public String getDailyWorkout() {
         return "Do 15 minutes of Swinging!";
     }
+
+    public TennisCoach() {
+        System.out.println("In constructor TennisCoach");
+    }
 }

@@ -8,4 +8,8 @@ public class TrackCoach implements Coach{
     public String getDailyWorkout() {
         return "Run 100 Km!";
     }
+
+    public TrackCoach() {
+        System.out.println("In constructor TrackCoach");
+    }
 }
