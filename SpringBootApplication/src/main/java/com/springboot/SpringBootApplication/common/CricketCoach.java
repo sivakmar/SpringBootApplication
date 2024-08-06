@@ -8,4 +8,8 @@ public class CricketCoach implements Coach {
     public String getDailyWorkout() {
         return "Do 15 minutes of running!";
     }
+
+    public CricketCoach() {
+        System.out.println("In constructor CricketCoach");
+    }
 }
